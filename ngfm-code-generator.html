@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nigeria FM Maturity Survey — Access Code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy:    #0A2240;
+    --blue:    #1356A2;
+    --mid:     #2C7BE5;
+    --sky:     #5BA8F5;
+    --ice:     #D6EAFF;
+    --white:   #FFFFFF;
+    --off:     #F4F8FD;
+    --text:    #0D1F35;
+    --muted:   #5A7899;
+    --success: #1C8A6E;
+    --error:   #C0392B;
+    --gold:    #D4A017;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-stripe {
+    height: 4px;
+    background: linear-gradient(90deg, var(--mid) 0%, var(--sky) 50%, var(--gold) 100%);
+  }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .header-logo {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--mid), var(--sky));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--white);
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
+  }
+  .header-text h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(15px, 2.5vw, 19px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .header-text p {
+    font-size: 12px;
+    color: var(--sky);
+    margin-top: 3px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .header-bg-dots {
+    position: absolute;
+    right: -20px; top: -20px;
+    width: 200px; height: 160px;
+    background-image: radial-gradient(circle, rgba(91,168,245,0.18) 1.5px, transparent 1.5px);
+    background-size: 18px 18px;
+    z-index: 1;
+  }
+
+  /* ── MAIN ── */
+  main {
+    flex: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px 20px 60px;
+  }
+
+  /* ── PHASE: CODE DISPLAY ── */
+  .phase { display: none; }
+  .phase.active { display: block; }
+
+  /* INTRO CARD */
+  .intro-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid var(--ice);
+    padding: 40px 36px;
+    box-shadow: 0 4px 24px rgba(19,86,162,0.07);
+    margin-bottom: 24px;
+    animation: slideUp 0.5s ease both;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ice);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+  }
+  .tag::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--mid);
+  }
+  .intro-card h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .intro-card h2 span { color: var(--mid); }
+  .intro-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 580px;
+  }
+
+  /* CODE CARD */
+  .code-card {
+    background: linear-gradient(145deg, var(--navy) 0%, #0F3460 100%);
+    border-radius: 16px;
+    padding: 40px 36px;
+    box-shadow: 0 8px 40px rgba(10,34,64,0.25);
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.5s 0.1s ease both;
+  }
+  .code-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(44,123,229,0.15);
+  }
+  .code-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background: rgba(91,168,245,0.1);
+  }
+  .code-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 16px;
+    position: relative; z-index: 2;
+  }
+  .code-display {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(26px, 6vw, 42px);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 20px 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; z-index: 2;
+    word-break: break-all;
+    transition: border-color 0.2s;
+  }
+  .code-display.copied {
+    border-color: var(--sky);
+    background: rgba(91,168,245,0.12);
+  }
+  .code-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: relative; z-index: 2;
+    margin-bottom: 24px;
+  }
+  .code-meta-item {
+    font-size: 12px;
+    color: rgba(214,234,255,0.6);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .code-meta-item strong { color: var(--sky); }
+  .copy-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--mid), var(--sky));
+    border: none;
+    border-radius: 10px;
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative; z-index: 2;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .copy-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(44,123,229,0.4); }
+  .copy-btn:active { transform: translateY(0); }
+  .copy-btn.copied { background: linear-gradient(135deg, var(--success), #27ae6e); }
+
+  /* ALERT */
+  .alert {
+    background: #FFF8E6;
+    border: 1.5px solid #F0C040;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    animation: slideUp 0.5s 0.2s ease both;
+  }
+  .alert-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .alert p { font-size: 13.5px; line-height: 1.6; color: #7A5800; }
+  .alert strong { color: #5A4000; }
+
+  /* CONFIRM CARD */
+  .confirm-card {
+    background: var(--white);
+    border: 1px solid var(--ice);
+    border-radius: 14px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 2px 12px rgba(19,86,162,0.06);
+    animation: slideUp 0.5s 0.3s ease both;
+  }
+  .confirm-check {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+  }
+  .confirm-check input[type="checkbox"] {
+    width: 20px; height: 20px;
+    accent-color: var(--mid);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .confirm-check span {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .done-btn {
+    padding: 12px 28px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 9px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.35;
+    pointer-events: none;
+    transition: all 0.25s;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .done-btn.enabled {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .done-btn.enabled:hover { background: var(--blue); }
+
+  /* ── PHASE: DONE ── */
+  .done-card {
+    background: var(--white);
+    border: 1px solid var(--ice);
+    border-radius: 16px;
+    padding: 56px 40px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(19,86,162,0.08);
+    animation: scaleIn 0.4s ease both;
+  }
+  .done-icon {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, #D6F5EC, #A8EDD6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 24px;
+  }
+  .done-card h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .done-card p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 440px;
+    margin: 0 auto 28px;
+  }
+  .done-code-recap {
+    display: inline-block;
+    background: var(--ice);
+    color: var(--navy);
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 12px 28px;
+    border-radius: 10px;
+    margin-bottom: 28px;
+  }
+  .report-note {
+    background: var(--off);
+    border: 1px solid var(--ice);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .report-note strong { color: var(--navy); }
+
+  /* ── PHASE: VALIDATE ── */
+  .validate-section {
+    background: var(--white);
+    border: 1px solid var(--ice);
+    border-radius: 16px;
+    padding: 40px 36px;
+    box-shadow: 0 4px 24px rgba(19,86,162,0.07);
+    margin-top: 24px;
+    animation: slideUp 0.4s ease both;
+  }
+  .validate-section h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .validate-section > p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .validate-input-wrap {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .validate-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 14px 18px;
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--navy);
+    background: var(--off);
+    border: 1.5px solid var(--ice);
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    transition: border-color 0.2s;
+  }
+  .validate-input:focus { border-color: var(--mid); background: var(--white); }
+  .validate-btn {
+    padding: 14px 28px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .validate-btn:hover { background: var(--navy); }
+  .validate-result {
+    margin-top: 16px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    display: none;
+  }
+  .validate-result.valid {
+    background: #E6F9F3;
+    border: 1px solid #1C8A6E;
+    color: #0D5C49;
+    display: block;
+  }
+  .validate-result.invalid {
+    background: #FDECEA;
+    border: 1px solid var(--error);
+    color: #7C1A12;
+    display: block;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 20px 24px;
+    text-align: center;
+  }
+  footer p {
+    font-size: 12px;
+    color: rgba(91,168,245,0.6);
+    line-height: 1.6;
+  }
+  footer p strong { color: var(--sky); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1.5px solid var(--ice);
+    margin: 28px 0;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+  }
+  .generating { animation: pulse 1.2s ease infinite; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 560px) {
+    .intro-card, .code-card, .confirm-card { padding: 28px 20px; }
+    .code-display { font-size: 22px; padding: 16px 18px; }
+    .confirm-card { flex-direction: column; }
+    .done-btn { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+<header>
+  <div class="header-stripe"></div>
+  <div class="header-inner">
+    <div class="header-logo">FM</div>
+    <div class="header-text">
+      <h1>Nigeria FM Industry Maturity Report</h1>
+      <p>ISO 41001:2018 Benchmark Study · Survey Access Code Portal</p>
+    </div>
+    <div class="header-bg-dots"></div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════ MAIN ══════════════════════════════ -->
+<main>
+
+  <!-- ─── PHASE 1: CODE DISPLAY ─── -->
+  <div id="phaseCode" class="phase active">
+
+    <div class="intro-card">
+      <div class="tag">Survey Submission Confirmed</div>
+      <h2>Your response has been <span>recorded.</span><br>Here is your unique access code.</h2>
+      <p>
+        This code is your personal key to the <strong>Nigeria FM Industry Maturity Report</strong> — the first ISO 41001:2018-referenced benchmark of FM practice in Nigeria.
+        Keep it safe; it will not be shown again and cannot be recovered.
+      </p>
+    </div>
+
+    <div class="code-card">
+      <div class="code-label">🔐 Your Unique Access Code</div>
+      <div class="code-display generating" id="codeDisplay">Generating…</div>
+      <div class="code-meta">
+        <div class="code-meta-item">📅 Generated: <strong id="codeDate">—</strong></div>
+        <div class="code-meta-item">🔒 No personal data stored</div>
+      </div>
+      <button class="copy-btn" id="copyBtn" onclick="copyCode()">
+        <span id="copyIcon">📋</span>
+        <span id="copyText">Copy Code to Clipboard</span>
+      </button>
+    </div>
+
+    <div class="alert">
+      <div class="alert-icon">⚠️</div>
+      <p>
+        <strong>Save your code now.</strong> This code is generated once and cannot be recovered.
+        Screenshot it, write it down, or paste it into a note. You will need it to access the final report when it is published.
+      </p>
+    </div>
+
+    <div class="confirm-card">
+      <label class="confirm-check">
+        <input type="checkbox" id="savedCheck" onchange="toggleDone()" />
+        <span>I confirm I have copied or saved my access code.</span>
+      </label>
+      <button class="done-btn" id="doneBtn" onclick="showDone()">Done ✓</button>
+    </div>
+
+  </div><!-- /phaseCode -->
+
+
+  <!-- ─── PHASE 2: DONE SCREEN ─── -->
+  <div id="phaseDone" class="phase">
+    <div class="done-card">
+      <div class="done-icon">✅</div>
+      <h2>You're all set!</h2>
+      <p>
+        Thank you for contributing to the most comprehensive study of Facility Management practice in Nigeria.
+        Your saved code is:
+      </p>
+      <div class="done-code-recap" id="doneCodeRecap">—</div>
+      <div class="report-note">
+        📄 The <strong>Nigeria FM Industry Maturity Report</strong> will be published at the close of the survey period.
+        Return to this page and enter your code in the <em>Access Report</em> section to download it.
+        The report will be freely available <strong>only to code holders</strong>.
+      </div>
+    </div>
+
+    <!-- VALIDATE SECTION — hidden until REPORT_RELEASED = true -->
+    <div id="validateSection" class="validate-section" style="display:none;">
+      <h3>📥 Access the Report</h3>
+      <p>The Nigeria FM Industry Maturity Report is now available. Enter your unique access code below to download your copy.</p>
+      <div class="validate-input-wrap">
+        <input type="text" class="validate-input" id="validateInput" placeholder="NIG-FM-XXXX-XXXX" maxlength="14" oninput="formatValidateInput(this)" />
+        <button class="validate-btn" onclick="validateCode()">Access Report →</button>
+      </div>
+      <div class="validate-result" id="validateResult"></div>
+    </div>
+
+  </div><!-- /phaseDone -->
+
+</main>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer>
+  <p>
+    <strong>Nigeria FM Industry Maturity Report</strong> · Benchmarked against ISO 41001:2018 ·
+    No personal data is collected or stored by this portal. All codes are generated locally in your browser.
+  </p>
+</footer>
+
+
+<!-- ══════════════════════════════ SCRIPT ══════════════════════════════ -->
+<script>
+  /* ── CONFIG ── */
+  const REPORT_RELEASED = false;        // ← Set to true when report is published
+  const REPORT_URL      = '#';          // ← Replace with actual report download/page URL
+  const SALT            = 'NGFM2025ISO41001';
+
+  /* ── STATE ── */
+  let generatedCode = '';
+
+  /* ── GENERATE CODE on load ── */
+  window.addEventListener('DOMContentLoaded', async () => {
+    generatedCode = await generateCode();
+    const el = document.getElementById('codeDisplay');
+    el.textContent = generatedCode;
+    el.classList.remove('generating');
+
+    document.getElementById('codeDate').textContent =
+      new Date().toLocaleDateString('en-NG', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    if (REPORT_RELEASED) {
+      document.getElementById('validateSection').style.display = 'block';
+    }
+  });
+
+  /* ── CODE GENERATION (SHA-256 via Web Crypto) ── */
+  async function generateCode() {
+    const entropy   = crypto.getRandomValues(new Uint32Array(4));
+    const timestamp = Date.now();
+    const raw       = `${SALT}:${timestamp}:${Array.from(entropy).join(':')}`;
+    const msgBuf    = new TextEncoder().encode(raw);
+    const hashBuf   = await crypto.subtle.digest('SHA-256', msgBuf);
+    const hashArr   = Array.from(new Uint8Array(hashBuf));
+
+    const CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no O,0,I,1
+    const pick  = (byte) => CHARS[byte % CHARS.length];
+
+    const p1 = hashArr.slice(0,  4).map(pick).join('');
+    const p2 = hashArr.slice(4,  8).map(pick).join('');
+    return `NIG-FM-${p1}-${p2}`;
+  }
+
+  /* ── COPY ── */
+  function copyCode() {
+    if (!generatedCode) return;
+    navigator.clipboard.writeText(generatedCode).then(() => {
+      const btn  = document.getElementById('copyBtn');
+      const icon = document.getElementById('copyIcon');
+      const txt  = document.getElementById('copyText');
+      const disp = document.getElementById('codeDisplay');
+      icon.textContent = '✅';
+      txt.textContent  = 'Code Copied!';
+      btn.classList.add('copied');
+      disp.classList.add('copied');
+      setTimeout(() => {
+        icon.textContent = '📋';
+        txt.textContent  = 'Copy Code to Clipboard';
+        btn.classList.remove('copied');
+        disp.classList.remove('copied');
+      }, 2500);
+    }).catch(() => {
+      // Fallback for older browsers
+      const ta = document.createElement('textarea');
+      ta.value = generatedCode;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    });
+  }
+
+  /* ── TOGGLE DONE BUTTON ── */
+  function toggleDone() {
+    const checked = document.getElementById('savedCheck').checked;
+    const btn     = document.getElementById('doneBtn');
+    btn.classList.toggle('enabled', checked);
+  }
+
+  /* ── SHOW DONE SCREEN ── */
+  function showDone() {
+    document.getElementById('doneCodeRecap').textContent = generatedCode;
+    document.getElementById('phaseCode').classList.remove('active');
+    document.getElementById('phaseDone').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (REPORT_RELEASED) {
+      document.getElementById('validateSection').style.display = 'block';
+    }
+  }
+
+  /* ── FORMAT VALIDATE INPUT ── */
+  function formatValidateInput(el) {
+    let v = el.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+    let out = '';
+    if (v.length > 0) out += v.slice(0, 3);      // NIG
+    if (v.length > 3) out += '-' + v.slice(3, 5); // FM
+    if (v.length > 5) out += '-' + v.slice(5, 9); // XXXX
+    if (v.length > 9) out += '-' + v.slice(9,13); // XXXX
+    el.value = out.startsWith('NIG') ? out : el.value;
+    // simple re-input
+    el.value = formatDisplay(el.value.replace(/-/g,'').toUpperCase());
+  }
+
+  function formatDisplay(raw) {
+    raw = raw.replace(/[^A-Z0-9]/g, '');
+    let out = '';
+    const parts = [3, 2, 4, 4]; // NIG FM XXXX XXXX
+    let i = 0;
+    parts.forEach((len, idx) => {
+      if (raw.slice(i, i+len)) {
+        out += (idx > 0 ? '-' : '') + raw.slice(i, i+len);
+        i += len;
+      }
+    });
+    return out;
+  }
+
+  /* ── VALIDATE CODE ── */
+  function validateCode() {
+    const input   = document.getElementById('validateInput').value.trim().toUpperCase();
+    const result  = document.getElementById('validateResult');
+    const pattern = /^NIG-FM-[A-Z2-9]{4}-[A-Z2-9]{4}$/;
+
+    result.className = 'validate-result';
+    result.style.display = 'none';
+
+    if (!pattern.test(input)) {
+      result.className = 'validate-result invalid';
+      result.innerHTML = '❌ <strong>Invalid code format.</strong> Please check your code and try again. Codes follow the format NIG-FM-XXXX-XXXX.';
+      result.style.display = 'block';
+      return;
+    }
+
+    // Valid format → grant access
+    result.className = 'validate-result valid';
+    result.innerHTML = `✅ <strong>Code verified.</strong> Your access to the Nigeria FM Industry Maturity Report has been granted.
+      <a href="${REPORT_URL}" style="color:#0D5C49;font-weight:700;display:block;margin-top:8px;">
+        → Download the Report
+      </a>`;
+    result.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
